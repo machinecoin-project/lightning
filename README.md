@@ -59,7 +59,7 @@ For the impatient here's the gist of it for Ubuntu and Debian:
     sudo apt-get install -y \
       autoconf automake build-essential git libtool libgmp-dev \
       libsqlite3-dev python python3 net-tools
-    git clone https://github.com/ElementsProject/lightning.git
+    git clone https://github.com/machinecoin-project/lightning.git
     cd lightning
     make
 
@@ -67,21 +67,21 @@ Or if you like to throw `docker` into the mix:
 
     sudo docker run \
     	-v $HOME/.lightning:/root/.lightning \
-    	-v $HOME/.bitcoin:/root/.bitcoin \
+    	-v $HOME/.machinecoin:/root/.machinecoin \
     	-p 9735:9735 \
     	cdecker/lightningd:latest
 
 ### Starting `lightningd`
 
-In order to start `lightningd` you will need to have a local `bitcoind`
+In order to start `lightningd` you will need to have a local `machinecoind`
 node running in either testnet or regtest mode:
 
-    bitcoind -daemon -testnet
+    machinecoind -daemon -testnet
 
-Wait until `bitcoind` has synchronized with the testnet network.
+Wait until `machinecoind` has synchronized with the testnet network.
 
 Make sure that you do not have `walletbroadcast=0` in your
-`~/.bitcoin/bitcoin.conf`, or you may run into trouble.
+`~/.machinecoin/machinecoin.conf`, or you may run into trouble.
 Notice that currently pruned nodes are not supported and may result in
 `lightningd` being unable to synchronize with the blockchain.
 
