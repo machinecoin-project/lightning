@@ -53,7 +53,17 @@ const struct chainparams networks[] = {
      .cli_args = "-testnet",
      .dust_limit = 100000,
      .when_lightning_became_cool = 1,
-     .testnet = true}
+     .testnet = true},
+    {.index = 5,
+     .network_name = "machincoin",
+     .bip173_name = "mc",
+     .genesis_blockhash = {{{.u.u8 = {0x72, 0x31, 0xe8, 0x03, 0x77, 0x96, 0xde, 0x41, 0x2d, 0x35, 0x0e, 0x50, 0x9a, 0x56, 0xed, 0x4f, 0xcc, 0xdd, 0xb2, 0x0c, 0xfd, 0xe1, 0xde, 0xbf, 0x1c, 0x47, 0xa5, 0xce, 0x9b, 0x87, 0x1f, 0x6a }}}},
+     .rpc_port = 40332,
+     .cli = "machinecoin-cli",
+     .cli_args = NULL,
+     .dust_limit = 100000,
+     .when_lightning_became_cool = 1320000,
+     .testnet = false}
 };
 
 const struct chainparams *chainparams_for_network(const char *network_name)
